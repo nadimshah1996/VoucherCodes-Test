@@ -1,0 +1,91 @@
+What is Protractor?
+
+- It is an end-to-end framework for Angular and Angular JS applications.
+- Protractor runs test against your application running in a real browser, interacting with it as a user would
+- It also allows us to test non angular applications using the command browser.ignoreSynchronization = true. We use this function to switch to non-angular pages so that protractor understand that it is not using an angular page
+  Why I am using Protractor?
+- Identifies web elements with advanced HTML attributes
+- Perform cross browser testing (E.G. Chrome, FireFox, Edge ect.)
+- Performs End to End Functional Testing
+
+How to setup Protractor in Windows?
+Step 1: Download and install node.js
+
+- First, open up a terminal and type in node -v to check if you have node installed, if so it will tell you the version it has
+- If not then go to https://nodejs.org/en/download/
+- You will then select windows installer (.msi)
+- To Check if you need 32 bits or 64 bits go to File Explorer > This PC> Right Click > Properties > Here it will tell you what your device has
+- Go through the Node.JS setup which will also add the path variable, continue clicking next and finally click install
+- In terminal, type: node-v to check if its install which shows the version you have
+- To check if node.js is installed, we can check in our environment variables, by going to File Explorer > This PC > right click properties > Advanced System Settings > Environment Variables > In User variables > Click edit > you will see the path for NPM
+- You can also check in system variables clicking edit > and you will see the file path for node.js
+
+  Step 2: Install Protractor
+
+- To check if you have Protractor already, open up a terminal, type protractor –version to see if it exists
+- This can only be installed after adding node.js
+- Otherwise, to install protractor, open a terminal and type: npm install -g protractor (-g installs globally)
+- It should start downloading Protractor to your system
+- In terminal type protractor –version to check if its installed
+- In terminal you can also type : where protractor
+- This gives you the location of the file
+- you can check by going to file explorer > This PC > Local disk C > your user > click view tab and tick hidden files > click appData > Roaming > npm > you should see the contents of Protractor
+
+Step 3: Run Command for web driver
+
+- In terminal type: webdriver-manager update
+- This downloads browser drivers
+- If you go back to npm folder > node_modules > protractor > node_modules > webdriver-manager > selenium > you will see the browser drivers in this folder
+
+  The installation is essentially the same setup on Mac. However, file location will be different.
+
+  How to setup Protractor on Mac?
+
+  Step 1: Download and install node.js
+
+- In terminal you can check if its already installed by typing node -v or npm-v
+- Otherwise go to https://nodejs.org/en/download/
+- Click MacOS installer
+- Go through the steps and finally click install
+
+  Step 2: Install Protractor
+
+- Open terminal and type: protractor –version to see if its already installed
+- Otherwise type: npm install -g protractor
+- Node must be installed to use protractor
+
+  Step 3: Run command for web driver
+
+- In terminal type: web-driver-manager update
+- This downloads browser drivers
+- If you go to folder > cmd shift g on keyboard> go to user/local/lib/ which should show the node modules. This depends on where you store the dependencies> you will find protractor with node modules and webdriver
+
+How to install protractor screenshot reporter
+
+Step 1: open up a browser and navigate to https://www.npmjs.com/package/protractor-jasmine2-screenshot-reporter
+
+- in terminal type npm: install protractor-jasmine2-screenshot-reporter --save-dev
+- This will install all the dependencies
+- You will see in the conf.js file I added some scripts for the jasmine reporter, so once you run the tests, a target folder will appear
+
+  How to run protractor test
+
+1. First, you need to open GitHub where I created a repository:
+2. Clone the repository in terminal and choose a file location to store the tests
+3. In Terminal type: git clone <copy the repo name from the link I sent which was submitted in the test>
+4. Open up an IDE such as Visual Studio Code
+5. To run the protractor tests, go to conf.js file
+6. In this file you will see specs, this is where the tests run
+7. Where you see comments remove the //
+8. Always click save to ensure test run correctly
+9. Now open terminal in the IDE and type: Protractor ./conf/conf.js or protractor conf.js
+
+How to see the failed tests:
+
+1. In terminal run: protractor ./conf/conf.js or protractor conf.js
+2. It will then generate a file called target
+3. In file explorer open up the voucherCodes test folder
+4. Then the target folder
+5. Then the screenshot folder
+6. In This folder, you will see screenshots of each test and also if you click on my-report, it will open up a browser where you can see a summary of the tests and click on where the test has failed
+7. In the my-report folder you should see when opening the failed test, you will see in the image that autosuggest is not appearing
